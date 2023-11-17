@@ -3,6 +3,7 @@
 
 cd   /home/ubuntu/hello-flask
 
+python3 get-pip.py
 
 echo ">>> pip install ----------------------"
 pip install -r requirements.txt
