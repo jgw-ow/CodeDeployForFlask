@@ -13,6 +13,11 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 jwt = JWTManager(app)
 cors = CORS(app, resources={r"/*": {"origins": "*"}})
 
+@app.route('/test)
+def test():
+    return "test"
+
+
 @app.route('/', methods=['GET'])
 def main():
     sort = request.args.get('sort')
