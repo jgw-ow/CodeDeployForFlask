@@ -13,7 +13,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 jwt = JWTManager(app)
 cors = CORS(app, resources={r"/*": {"origins": "*"}})
 
-@app.route('/test)
+@app.route('/test')
 def test():
     return "test"
 
