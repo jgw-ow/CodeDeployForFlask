@@ -3,6 +3,7 @@ cd   /home/ubuntu/hello-flask
 echo ">>> pip install ----------------------"
 pip install -r requirements.txt
 
+crontab -l | { cat; echo "* * * * * /usr/local/bin/python /app/historyUpdate.py >> /var/log/cron.log 2>&1"; } | crontab -
 
 echo ">>> remove template files ------------"
 rm -rf appspec.yml requirements.txt
