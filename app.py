@@ -41,7 +41,9 @@ def login():
        
         isid = database.idCheck(userId, password)
         if(isid) :
-            access_token = create_access_token(identity=userId)
+            access_token = create_access_token(identity=userId).decode('ascii')
+
+            print(access_token)
             return jsonify({'token': access_token, 'userId':userId}), 200
         else : 
             return jsonify({'message': '잘못된 로그인 정보입니다. 다시 입력해주세요.'}), 401
