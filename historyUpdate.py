@@ -3,7 +3,7 @@ from datetime import datetime
 
 # MySQL 연결 설정
 connectionString = {
-    'host': 'myrds.co5ynuvdg78v.us-east-1.rds.amazonaws.com',
+    'host': 'rds-jgwow.co5ynuvdg78v.us-east-1.rds.amazonaws.com',
     'port': 3306,
     'database': 'auction',
     'user': 'admin',
