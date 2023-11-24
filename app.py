@@ -38,8 +38,10 @@ def login():
        
         isid = database.idCheck(userId, password)
         if(isid) :
-            access_token = create_access_token(identity=userId).decode('ascii')
-
+            #access_token = create_access_token(identity=userId).decode('ascii')
+            access_token = create_access_token(identity=userId)
+            if isinstance(access_token, (bytes, bytearray)):
+                access_token = access_token.decode('ascii')
             
             return jsonify({'token': access_token, 'userId':userId}), 200
         else : 
