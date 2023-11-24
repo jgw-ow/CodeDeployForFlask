@@ -131,7 +131,7 @@ def create():
         userId = request.form.get('userId')
         endTime = request.form.get('endTime')
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], file.filename))
-        image_url = 'http://100.24.43.31:5000/resources/' + file.filename
+        image_url = 'http://44.201.125.50:5000/resources/' + file.filename
         print(image_url)
         return database.addItemInfo( itemName, itemContent, itemPrice, image_url, endTime, userId)
               
