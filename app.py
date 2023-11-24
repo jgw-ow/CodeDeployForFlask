@@ -59,7 +59,10 @@ def signup():
         # 사용자 정보를 데이터베이스에 추가하고 결과를 받아옴
         userInfo, status_code, headers = database.addUserInfo(userId, userPwd, userNickname, userPhone)
         # 사용자 정보가 성공적으로 추가되면 JWT 토큰 생성
-        access_token = create_access_token(identity=userId).decode('ascii')
+        # access_token = create_access_token(identity=userId).decode('ascii')
+        access_token = create_access_token(identity=userId)
+        if isinstance(access_token, (bytes, bytearray)):
+            access_token = access_token.decode('ascii')
 
         
         return jsonify({"message": "계정 추가 및 로그인 성공", "token": access_token, 'userId':userId}), 200, {'Content-Type': 'application/json'}
